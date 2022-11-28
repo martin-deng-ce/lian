@@ -1,0 +1,18 @@
+Login: # 登录模块
+  login: # 登录接口
+    path: /account/sLogin  # 路径
+    method: POST #  请求方法
+  loginout: #  登出
+    path: xxx  # 路径
+    method: POST # 方法
+
+Shop: # 店铺模块
+  query: # 登录接口
+    path: /shopping/myShop  # 路径
+    method: GET #  请求方法
+  file_upload: # 文件上传
+      path: /file  # 路径
+      method: POST #  请求方法
+  update:
+    path: /shopping/updatemyshop # 路劲
+    method: POST # 方法
