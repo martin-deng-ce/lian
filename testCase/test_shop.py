@@ -10,6 +10,7 @@ import pytest
 import os
 import allure
 from utils.handle_path import config_path
+from common.apiAssert import ApiAssert
 """
 fixture函数的调用：
         -1.没有返回值得fixture函数，直接方法或者类前面使用@pytest.mark.userfixtures('fixture函数名')
@@ -31,7 +32,8 @@ class TestShop:
     def test_shop_query(self, title, body, exp_data, shop_init):
         shop = shop_init # 获取这个fixture返回值--店铺的实例对象
         res = shop.query(body)
-        assert res['code'] == exp_data['code']
+        #assert res['code'] == exp_data['code']
+        ApiAssert.api_assert(res,'==',exp_data,assert_info='code',msg= 'xx')
         # 1.登录
         # 2.调用店铺查询接口
         # 3.ddt

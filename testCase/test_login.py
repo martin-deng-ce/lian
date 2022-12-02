@@ -9,7 +9,7 @@ from libs.login import Login  # 接口路径
 from common.apiAssert import ApiAssert
 from utils.handle_excel_V2 import get_excel_data  # 工具方法 测试数据
 # from utils.handle_yml import get_case_data
-from utils.handle_path import  data_path
+from utils.handle_path import data_path, report_path
 import allure
 import os
 
@@ -35,5 +35,5 @@ class TestLogin:
 
 
 if __name__ == '__main__':
-    pytest.main([__file__, '-s', '--alluredir', '../outFiles/report/tmp', '--clean-alluredir'])
-    os.system('allure serve ../outFiles/report/tmp')
+    pytest.main([__file__, '-s', '--alluredir', f'{report_path}', '--clean-alluredir'])
+    os.system(f'allure serve {report_path}')

@@ -32,7 +32,7 @@ class MyLog():
             cfg = ConfigParser()
             cfg.read(os.path.join(config_path, 'loguru.ini'), encoding='utf-8')
             logger.remove(handler_id=None)
-            logger.add(os.path.join(log_path, 'waimai')+__curdate+'.log',encoding='utf-8',
+            logger.add(os.path.join(log_path, 'waimai_')+__curdate+'.log', encoding='utf-8',
                        retention=cfg.get('log', 'retention'),
                        rotation=cfg.get('log', 'rotation'),
                        format=cfg.get('log', 'format'),
@@ -43,8 +43,8 @@ class MyLog():
         return logger
 
 
+log = MyLog().get_log()
 if __name__ == '__main__':
-    log = MyLog().get_log()
     log.error('testing11')
 
 

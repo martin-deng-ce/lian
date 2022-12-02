@@ -9,8 +9,6 @@
 from utils.handle_loguru import log
 import traceback
 class ApiAssert:
-
-
     """断言类，不需要创建实例 """
     @classmethod  # 类方法
     def api_assert(cls, result, condition, exp_result, assert_info, msg='断言操作'):
@@ -27,6 +25,8 @@ class ApiAssert:
             assert_type = {
                 "==": result[assert_info] == exp_result[assert_info],
                 "!=": result[assert_info] == exp_result[assert_info],
+                "in": result[assert_info] in exp_result[assert_info] if isinstance(exp_result[assert_info],
+                                                                                   list) else False,
             }
             if condition in assert_type:  # 当前的断言条件在我们的规划的断言类型里
                 assert assert_type[condition]

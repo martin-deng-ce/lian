@@ -7,12 +7,12 @@
 # 处理路径的库，os或者pathlib
 import os
 # # 先获取项目根目录的路径
-print(__file__)
+#print(__file__)
 # # 上一层路径../
-print(os.path.dirname(__file__))
-project_path1 = os.path.dirname(os.path.dirname(__file__))
+#print(os.path.dirname(__file__))
+#project_path1 = os.path.dirname(os.path.dirname(__file__))
 project_path2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print('工程根路径--->', project_path2)
+#print('工程根路径--->', project_path2)
 #  data数据路径， 绝对路径比较好处理
 data_path = os.path.join(project_path2, 'data')
 report_path = os.path.join(project_path2, r'outFiles\report\tmp')
